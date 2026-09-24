@@ -3,7 +3,7 @@ export async function onRequestPost(context) {
     const dados = await context.request.formData();
 
     const respostaGoogle = await fetch(
-      "SUA_URL_DO_APPS_SCRIPT",
+      "https://script.google.com/macros/s/AKfycbxkZGocKlIsKwnWW6yv1AWjVsyLQdfvyzDbHRBsd3SHaRcBEokZ4DlDJsGvRoJEjzglMw/exec",
       {
         method: "POST",
         body: dados,
