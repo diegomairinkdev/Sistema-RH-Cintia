@@ -13,10 +13,15 @@ export async function onRequestPost(context) {
 
     const texto = await respostaGoogle.text();
 
-    return new Response(texto, {
-      status: 200,
-      headers: { "Content-Type": "text/plain; charset=utf-8" },
-    });
+    return new Response(
+      JSON.stringify({
+        sucesso:true,
+        respostaGoogle: texto,
+      }),
+      {
+        status: 200,
+        headers: { "Content-Type": "text/plain; charset=utf-8" },
+    };
   } catch (erro) {
     return new Response(
       "Erro na comunicação: " + erro.message,
