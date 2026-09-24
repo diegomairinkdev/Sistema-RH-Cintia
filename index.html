@@ -13,25 +13,31 @@
 
         <h1>Preencha os dados abaixo</h1>
 
-        <label for="nome">Nome: </label>
+        <label for="nome">Nome </label>
         <input type="text"  id="nome" autocomplete="given-name"   placeholder="Digite seu nome" required name="nome">
 
-        <label for="sobrenome">Sobrenome: </label>
+        <label for="sobrenome">Sobrenome </label>
         <input type="text"  id="sobrenome" autocomplete="family-name"   placeholder="Digite seu sobrenome" required name="sobrenome">
 
-        <label for="email">Email: </label>
+        <label for="email">Email </label>
         <input type="email"  id="email" autocomplete="email"   placeholder="Digite seu email" required name="email">
         
-        <label for="telefone">Telefone: </label>
+        <label for="telefone">Telefone </label>
         <input type="tel"  id="telefone" autocomplete="tel"   placeholder="Digite seu telefone" required name="telefone">
 
-        <label for="endereco">Endereço: </label>
+        <label for="cep">CEP</label>
+        <input type="text" inputmode="numeric" pattern="[0-9]{8}" minlength="8" maxlength="8" id="cep" placeholder="Digite o CEP da sua rua ou da cidade" required name="cep">
+       
+        <label for="endereco">Endereço </label>
         <input type="text"  id="endereco" autocomplete="street-address"   placeholder="Digite seu endereço" required name="endereco">
 
-        <label for="nascimento">Data de Nascimento: </label>
+        <label for="numero">Número</label>
+        <input type="text" id="numero" placeholder="Digite o número da casa" required name="numero">
+
+        <label for="nascimento">Data de Nascimento </label>
         <input type="date"  id="nascimento" autocomplete="bday"   placeholder="Digite seu nascimento" required name="nascimento">
 
-        <label for="cpf">CPF: </label>
+        <label for="cpf">CPF </label>
         <input type="text" inputmode="numeric" pattern="[0-9]{11}" minlength="11" maxlength="11" aria-describedby="cpf-ajuda"  id="cpf"   placeholder="Digite seu cpf. Somente números" required name="cpf">
 
         <small id="cpf-ajuda">Informe os 11 dígitos, incluindo zeros no início.</small>
