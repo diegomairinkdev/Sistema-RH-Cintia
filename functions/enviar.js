@@ -3,26 +3,22 @@ export async function onRequestPost(context) {
     const dados = await context.request.formData();
 
     const respostaGoogle = await fetch(
-      "https://script.google.com/macros/s/AKfycbxkZGocKlIsKwnWW6yv1AWjVsyLQdfvyzDbHRBsd3SHaRcBEokZ4DlDJsGvRoJEjzglMw/exec",
+      "SUA_URL_DO_APPS_SCRIPT",
       {
         method: "POST",
         body: dados,
       },
     );
 
-    if (!respostaGoogle.ok) {
-      throw new Error("Erro na comunicação com o Google Apps Script");
-    }
-
     const texto = await respostaGoogle.text();
+    const resultadoGoogle = JSON.parse(texto);
 
     return new Response(
       JSON.stringify({
-        sucesso: true,
-        respostaGoogle: texto,
+        sucesso: resultadoGoogle.sucesso,
       }),
       {
-        status: 200,
+        status: resultadoGoogle.sucesso ? 200 : 500,
         headers: {
           "Content-Type": "application/json",
         },
