@@ -42,6 +42,9 @@ function validCPF(value) {
   }
   return true;
 }
+function validNacionalidade(value) {
+  return /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(value.trim());
+}
 function today() {
   const date = new Date();
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
@@ -67,6 +70,11 @@ form.addEventListener("submit", async (event) => {
     input.setCustomValidity("");
     data[id] = input.value;
   });
+  if (!validNacionalidade(data.nacionalidade)) {
+  document
+    .getElementById("nacionalidade")
+    .setCustomValidity("Informe a nacionalidade usando apenas letras.");
+}
   if (!validCPF(data.cpf))
     cpf.setCustomValidity(
       "Informe um CPF válido com 11 dígitos, incluindo zeros iniciais.",
