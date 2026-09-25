@@ -63,3 +63,28 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
 small { display: block; margin-top: 5px; }
 #status { line-height: 1.5; }
 #status:empty { display: none; }
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-conteudo {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-icone {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #16a34a;
+}

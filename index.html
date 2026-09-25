@@ -1,68 +1,179 @@
 <!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Candidatura - Cíntia</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>        
+  <body>
     <form>
+      <h1>Preencha os dados abaixo</h1>
 
-        <h1>Preencha os dados abaixo</h1>
+      <label for="nome">Nome </label>
+      <input
+        type="text"
+        id="nome"
+        autocomplete="given-name"
+        placeholder="Digite seu nome"
+        required
+        name="nome"
+      />
 
-        <label for="nome">Nome </label>
-        <input type="text"  id="nome" autocomplete="given-name"   placeholder="Digite seu nome" required name="nome">
+      <label for="sobrenome">Sobrenome </label>
+      <input
+        type="text"
+        id="sobrenome"
+        autocomplete="family-name"
+        placeholder="Digite seu sobrenome"
+        required
+        name="sobrenome"
+      />
 
-        <label for="sobrenome">Sobrenome </label>
-        <input type="text"  id="sobrenome" autocomplete="family-name"   placeholder="Digite seu sobrenome" required name="sobrenome">
+      <label for="email">Email </label>
+      <input
+        type="email"
+        id="email"
+        autocomplete="email"
+        placeholder="Digite seu email"
+        required
+        name="email"
+      />
 
-        <label for="email">Email </label>
-        <input type="email"  id="email" autocomplete="email"   placeholder="Digite seu email" required name="email">
-        
-        <label for="telefone">Telefone </label>
-        <input type="tel"  id="telefone" autocomplete="tel"   placeholder="Digite seu telefone" required name="telefone">
+      <label for="telefone">Telefone </label>
+      <input
+        type="tel"
+        id="telefone"
+        autocomplete="tel"
+        placeholder="Digite seu telefone"
+        required
+        name="telefone"
+      />
 
-        <label for="cep">CEP</label>
-        <input type="text" inputmode="numeric" pattern="[0-9]{8}" minlength="8" maxlength="8" id="cep" placeholder="Digite o CEP da sua rua ou da cidade" required name="cep">
-       
-        <label for="endereco">Endereço </label>
-        <input type="text"  id="endereco" autocomplete="street-address"   placeholder="Digite seu endereço" required name="endereco">
+      <label for="cep">CEP</label>
+      <input
+        type="text"
+        inputmode="numeric"
+        pattern="[0-9]{8}"
+        minlength="8"
+        maxlength="8"
+        id="cep"
+        placeholder="Digite o CEP da sua rua ou da cidade"
+        required
+        name="cep"
+      />
 
-        <label for="numero">Número</label>
-        <input type="text" id="numero" placeholder="Digite o número da casa" required name="numero">
+      <label for="endereco">Endereço </label>
+      <input
+        type="text"
+        id="endereco"
+        autocomplete="street-address"
+        placeholder="Digite seu endereço"
+        required
+        name="endereco"
+      />
 
-        <label for="nascimento">Data de Nascimento </label>
-        <input type="date"  id="nascimento" autocomplete="bday"   placeholder="Digite seu nascimento" required name="nascimento">
+      <label for="numero">Número</label>
+      <input
+        type="text"
+        id="numero"
+        placeholder="Digite o número da casa"
+        required
+        name="numero"
+      />
 
-        <label for="cpf">CPF </label>
-        <input type="text" inputmode="numeric" pattern="[0-9]{11}" minlength="11" maxlength="11" aria-describedby="cpf-ajuda"  id="cpf"   placeholder="Digite seu cpf. Somente números" required name="cpf">
+      <label for="nascimento">Data de Nascimento </label>
+      <input
+        type="date"
+        id="nascimento"
+        autocomplete="bday"
+        placeholder="Digite seu nascimento"
+        required
+        name="nascimento"
+      />
 
-        <small id="cpf-ajuda">Informe os 11 dígitos, incluindo zeros no início.</small>
-        <label for="sexo">Sexo: </label>
-        <select id="sexo" required name="sexo">
-            <option value="">Selecione uma opção</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-            <option value="outro">Outro</option>
-        </select>    
+      <label for="cpf">CPF </label>
+      <input
+        type="text"
+        inputmode="numeric"
+        pattern="[0-9]{11}"
+        minlength="11"
+        maxlength="11"
+        aria-describedby="cpf-ajuda"
+        id="cpf"
+        placeholder="Digite seu cpf. Somente números"
+        required
+        name="cpf"
+      />
 
-        <label for="nacionalidade">Nacionalidade: </label>
-        <input type="text" id="nacionalidade"  placeholder="Digite aqui sua nacionalidade" required name="nacionalidade">
+      <small id="cpf-ajuda"
+        >Informe os 11 dígitos, incluindo zeros no início.</small
+      >
+      <label for="sexo">Sexo: </label>
+      <select id="sexo" required name="sexo">
+        <option value="">Selecione uma opção</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="outro">Outro</option>
+      </select>
 
-        <aside aria-labelledby="privacidade-titulo" class="privacy">
-<h2 id="privacidade-titulo">Privacidade e proteção de dados</h2>
-<p>Os dados informados, incluindo CPF, endereço, telefone e data de nascimento, serão encaminhados à equipe de RH para cadastro e avaliação da candidatura e contato sobre o processo seletivo. O envio utiliza serviços do Google (Apps Script e Planilhas).</p>
-<p>Para solicitar acesso, correção ou exclusão dos seus dados, entre em contato com a equipe de RH pelo canal que disponibilizou este formulário. Não inclua informações além das solicitadas.</p>
-</aside>
-<p id="status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
-<button type="submit" id="candidatura">Enviar candidatura</button>  
+      <label for="nacionalidade">Nacionalidade: </label>
+      <input
+        type="text"
+        id="nacionalidade"
+        placeholder="Digite aqui sua nacionalidade"
+        required
+        name="nacionalidade"
+      />
 
+      <label for="ensino">Possui ensino médio: </label>
+      <select id="ensino" required name="ensino">
+        <option value="">Selecione uma opção</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
 
+      <aside aria-labelledby="privacidade-titulo" class="privacy">
+        <h2 id="privacidade-titulo">Privacidade e proteção de dados</h2>
+        <p>
+          Os dados informados, incluindo CPF, endereço, telefone e data de
+          nascimento, serão encaminhados à equipe de RH para cadastro e
+          avaliação da candidatura e contato sobre o processo seletivo. O envio
+          utiliza serviços do Google (Apps Script e Planilhas).
+        </p>
+        <p>
+          Para solicitar acesso, correção ou exclusão dos seus dados, entre em
+          contato com a equipe de RH pelo canal que disponibilizou este
+          formulário. Não inclua informações além das solicitadas.
+        </p>
+      </aside>
+      <p
+        id="status"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        tabindex="-1"
+      ></p>
+      <button type="submit" id="candidatura">Enviar candidatura</button>
     </form>
-    <noscript>Ative o JavaScript do navegador para enviar sua candidatura.</noscript>
-<script src="script.js"></script>
-</body>
+    <div id="modal-sucesso" class="modal">
+      <div class="modal-conteudo">
+        <div class="modal-icone">✓</div>
+
+        <h2>Candidatura enviada!</h2>
+
+        <p>
+          Seus dados foram recebidos com sucesso. A equipe de RH entrará em
+          contato caso seu perfil avance no processo seletivo.
+        </p>
+
+        <button type="button" id="fechar-modal">Fechar</button>
+      </div>
+    </div>
+    <noscript
+      >Ative o JavaScript do navegador para enviar sua candidatura.</noscript
+    >
+    <script src="script.js"></script>
+  </body>
 </html>

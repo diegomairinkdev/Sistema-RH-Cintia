@@ -1,5 +1,5 @@
 const GOOGLE_URL = "https://script.google.com/macros/s/AKfycbxkZGocKlIsKwnWW6yv1AWjVsyLQdfvyzDbHRBsd3SHaRcBEokZ4DlDJsGvRoJEjzglMw/exec";
-const FIELDS = ["nome", "sobrenome", "email", "telefone", "cep", "endereco", "numero", "nascimento", "cpf", "sexo", "nacionalidade"];
+const FIELDS = ["nome", "sobrenome", "email", "telefone", "cep", "endereco", "numero", "nascimento", "cpf", "sexo", "nacionalidade", "ensino"];
 const MAX_BYTES = 16384;
 
 function json(body, status = 200, extraHeaders = {}) {

@@ -2,6 +2,17 @@
 const form = document.querySelector("form");
 const button = document.getElementById("candidatura");
 const statusMessage = document.getElementById("status");
+const modal = document.getElementById("modal-sucesso");
+const fecharModal = document.getElementById("fechar-modal");
+function abrirModal() {
+  modal.style.display = "flex";
+}
+
+function fecharModalSucesso() {
+  modal.style.display = "none";
+}
+
+fecharModal.addEventListener("click", fecharModalSucesso);
 const fields = [
   "nome",
   "sobrenome",
@@ -14,11 +25,13 @@ const fields = [
   "cpf",
   "sexo",
   "nacionalidade",
+  "ensino",
 ];
 let sending = false;
 const attempts = new Set();
-function message(text) {
+function message(text, error = false) {
   statusMessage.textContent = text;
+  statusMessage.style.color = error ? "red" : "";
 }
 function validCPF(value) {
   if (!/^\d{11}$/.test(value) || /^(\d)\1{10}$/.test(value)) return false;
@@ -105,12 +118,13 @@ form.addEventListener("submit", async (event) => {
     const resultado = await resposta.json();
     if (resultado.sucesso) {
       form.reset();
-      message("Candidatura recebida com sucesso.");
+      message("");
+      abrirModal();
     } else {
-      message("Não foi possível registrar a candidatura.");
+      message("Não foi possível registrar a candidatura.", true);
     }
   } catch {
-    message("Não foi possível confirmar o envio.");
+    message("Não foi possível confirmar o envio.", true);
   } finally {
     clearTimeout(timeout);
     sending = false;
